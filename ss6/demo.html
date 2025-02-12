@@ -6,7 +6,7 @@
 </head>
 <body>
 <!--<button style="background-color: white" onclick="alert('Bạn đã thích bài này')">Thích</button>-->
-<button id="like-btn" style="background-color: white" onclick="changeBack()">Thích</button>
+<button id="like-btn" style="background-color: white">Thích</button>
 </body>
 <script>
     function changeBack() {
@@ -15,5 +15,6 @@
         likeBtn.innerText="Đã thích";
         likeBtn.style.width="100px";
     }
+    document.getElementById("like-btn").addEventListener("click", changeBack)
 </script>
 </html>
