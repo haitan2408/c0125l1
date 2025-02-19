@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>Amount</th>
+        <th>From Currency</th>
+        <th>To Currency</th>
+    </tr>
+    <tr>
+        <td><input id="money" type="number"></td>
+        <td><select id="fromCurrency">
+            <option>VietNam</option>
+            <option>USD</option>
+        </select></td>
+        <td><select id="toCurrency">
+            <option>VietNam</option>
+            <option>USD</option>
+        </select></td>
+        <td>
+            <button id="btn">Convert</button>
+        </td>
+    </tr>
+</table>
+<script>
+    document.getElementById("btn").addEventListener("click", function () {
+        // đổi tiền
+        //
+        // B1: lấy thông tin từ khách hàng (HTML)
+        let amount = document.getElementById("money").value;
+        let fromCurrency = document.getElementById("fromCurrency").value;
+        let toCurrency = document.getElementById("toCurrency").value;
+
+    //     B2: check thông tin
+        alert(amount);
+        alert(fromCurrency)
+        alert(toCurrency)
+        if(amount <= 0) {
+            alert("Tiền người dùng nhập vào không đúng")
+        } else {
+            if(fromCurrency === "USD" && toCurrency === "VietNam") {
+                alert(amount * 25000);
+            } else if(fromCurrency === "VietNam" && toCurrency === "USD") {
+                alert(amount/25000)
+            } else {
+                alert("Người dùng chọn sai thông tin. yêu cầu chọn lại")
+            }
+        }
+    })
+</script>
+</body>
+</html>
