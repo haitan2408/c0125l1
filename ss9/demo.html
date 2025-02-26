@@ -53,19 +53,34 @@
     // - số nguyên tố là số nguyên dương và luôn lớn hơn 2. Số nguyên đều là số lẻ ngoại trừ số 2
     // - Giảm số lượng vòng lặp
     // Deadline 8h tối mai. Đúng và sớm nhất 500 point, các bạn nộp 100 point
-    let count =0
-    let k = +prompt("Mời bạn nhập số k: ")
-    for(let i = 1; i <= k; i++) {
-        if(k%i ===0) {
-            count++;
+    // let isPrime = true;
+    // let k = +prompt("Mời bạn nhập số k: ")
+    // for(let i = 2; i <= Math.sqrt(k); i++) {
+    //     if(k%i ===0) {
+    //         isPrime = false;
+    //         break;
+    //     }
+    // }
+    // if(isPrime){
+    //     alert("Số nguyên tố");
+    // }else{
+    //     alert("Không phải là số nguyên tố");
+    // }
+
+//      Thay vì cho phép nhập số k thì anh mong muốn nó sẽ chạy từ 1 => 100 để hiển thị tất cả các số nguyên tố trong khoảng này
+    for (let k = 2; k<=100; k++) {
+        let isPrime = true;
+        for(let i = 2; i <= Math.sqrt(k); i++) {
+            if(k%i ===0) {
+                isPrime = false;
+                break;
+            }
+        }
+        if(isPrime){
+            console.log(k +" ");
         }
     }
-    if(count === 2){
 
-        alert("Số nguyên tố");
-    }else{
-        alert("Không phải là số nguyên tố");
-    }
 </script>
 
 </body>
