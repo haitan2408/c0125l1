@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Cửa hàng C0125M1</h1>
+<button onclick="displayProduct()">Danh sách sản phẩm</button>
+<script>
+    //     let nameProducts = ["Readmi note 14", "vivo ...", "SamSung ss23", "Oppo find X8", "Iphone 16", ""]
+    // let priceProducts = [20000000, 3000000]
+
+   function displayProduct() {
+       let products = [
+           ["Readmi note 14", 20000000, "8GB", ["Đỏ", "Tím", "Xanh"]],
+           ["Vivo ...", 30000000, "12GB", ["Vàng, Tím, Đen"]],
+           ["SS25", 30000000, "12GB", ["Trắng, Xám"]]
+       ];
+       document.writeln("<table width='500px'>")
+       document.writeln("<tr>")
+       document.writeln("<th>Tên sản phẩm</th>")
+       document.writeln("<th>Giá</th>")
+       document.writeln("<th>RAM</th>")
+       document.writeln("<th>Màu sẵn có</th>")
+       document.writeln("</tr>")
+       for (let i = 0; i < products.length; i++) {
+           document.writeln("<tr>")
+           for (let j = 0; j < products[i].length; j++){
+               document.writeln("<td>")
+               document.writeln(products[i][j])
+               document.writeln("</td>")
+           }
+           document.writeln("</tr>")
+       }
+       document.writeln("</table>")
+   }
+</script>
+</body>
+</html>
