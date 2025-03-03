@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button onclick="checkPrime()">Số nguyên tố</button>
+<button onclick="checkSNTInArr()">Kiểm tra</button>
+<script>
+    // let arr = [1,2,3];
+    // arr[arr.length] = 5;
+    //
+    // console.log(arr)
+
+    function checkPrime() {
+        let k = +prompt("Mời bạn nhập số k: ")
+        let temp = isPrime(k);
+        if (temp) {
+            alert("Số nguyên tố");
+        } else {
+            alert("Không phải là số nguyên tố");
+        }
+    }
+
+    function checkSNTInArr() {
+        let arr = [1, 2, 3, 4, 5, 9, 7]
+        for (let k = 0; k < arr.length; k++) {
+            let temp = isPrime(arr[k])
+            if (temp) {
+                console.log(k + " ");
+            }
+        }
+    }
+
+    function isPrime(k) {
+        let isPrime = true;
+        for (let i = 2; i <= Math.sqrt(k); i++) {
+            if (k % i === 0) {
+                isPrime = false;
+                break;
+            }
+        }
+        return isPrime;
+    }
+
+//     Viết lại bài số hoàn hảo, nhưng thay vì nhập bằng prompt, anh cần lấy dữ liệu từ input.
+//     + Kiểm tra dữ liệu của ô input có hợp lệ hay không (nó phải là số nguyên dương)
+//     3 công việc
+//     + Lấy giá trị từ input
+//     + Kiểm tra giá trị
+//     + Kiểm tra số hoàn hảo
+//     + Hiển thị kết quả
+
+</script>
+</body>
+</html>
