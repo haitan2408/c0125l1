@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="number" id="num">
+<button onclick="checkPerfect()">Kiểm tra</button>
+</body>
+
+<script>
+
+    function getValueFromInput(id) {
+        return document.getElementById(id).value;
+    }
+
+    function checkNum(num) {
+        return !isNaN(num) && num > 0 && num%1===0;
+    }
+
+    function checkPerfect() {
+        let num = getValueFromInput("num");
+        if(checkNum(num)) {
+              if(getTotalDivisor(num) === num) {
+                  document.writeln(num+" là số hoàn hảo")
+              } else {
+                  document.writeln(num +" không phải là số hoàn hảo.")
+              }
+        } else {
+            document.writeln("Đây không phải là số nguyên dương")
+        }
+    }
+
+    function isPerfect(num) {
+        let sum = 0;
+        for (let i = 1; i <= num/2; i++) {
+            sum +=i;
+        }
+        return sum === num;
+    }
+
+//     Cặp số thân thiết.
+//     tổng ước của số này bằng số còn lại và ngược lại
+//     Lấy giá trị từ prompt
+//     Kiểm tra số nguyên dương
+//     Kiểm tra cặp số thân thiết.
+    function getTotalDivisor(num) {
+        let sum = 0;
+        for (let i = 1; i <= num/2; i++) {
+            sum +=i;
+        }
+        return sum;
+    }
+
+    function checkFriendly() {
+        let numA = +prompt("Nhập số A: ")
+        let numB = +prompt("Nhập số B: ")
+        if(checkNum(numA) && checkNum(numB)) {
+            if(getTotalDivisor(numA) ===numB && numA === getTotalDivisor(numB)) {
+                document.writeln(`${numA} và ${numB} là cặp số thân thiết`)
+            } else {
+                document.writeln(`${numA} và ${numB} không phải là cặp số thân thiết`)
+            }
+        } else {
+            document.writeln("Đây không phải là số nguyên dương")
+        }
+    }
+
+
+
+</script>
+</html>
