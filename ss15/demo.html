@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Product {
+        code;
+        name;
+        price;
+        color;
+        screen;
+        camera;
+
+        // Dùng để khởi tạo đối tượng
+        constructor(code, name, price, color, screen, camera) {
+            this.code = code;
+            this.name = name;
+            this.price = price;
+            this.color = color;
+            this.screen = screen;
+            this.camera = camera;
+        }
+
+        call(phoneNumber) {
+            alert(this.name+ " đang gọi tới số "+ phoneNumber);
+        }
+
+        sale(percent) {
+            this.price = this.price - percent*this.price;
+        }
+    }
+
+    let samsung25ultra = new Product(1, "SamsungSS25ultra", 30000000, "Đen", "6.7, QuaHD", "200mp,...");
+    let vivoY100 = new Product(2, "vivoY100", 5000000, "Đen", "6.7, FullHD", "200mp,...");
+
+    alert(samsung25ultra.price)
+    samsung25ultra.sale(0.1)
+    samsung25ultra.call(+84796295776);
+    alert(vivoY100.price)
+    vivoY100.sale(0.05);
+    let products = [samsung25ultra, vivoY100];
+
+    document.writeln("<table width='500px'>")
+    document.writeln("<tr>")
+    document.writeln("<th>Tên sản phẩm</th>")
+    document.writeln("<th>Giá</th>")
+    document.writeln("<th>Màn hình</th>")
+    document.writeln("<th>Màu sẵn có</th>")
+
+    document.writeln("</tr>")
+    for (let i = 0; i < products.length; i++) {
+        document.writeln("<tr>")
+        document.writeln("<td>")
+        document.writeln(products[i].name)
+        document.writeln("</td>")
+        document.writeln("<td>")
+        document.writeln(products[i].price)
+        document.writeln("</td>")
+        document.writeln("<td>")
+        document.writeln(products[i].screen)
+        document.writeln("</td>")
+        document.writeln("<td>")
+        document.writeln(products[i].color)
+        document.writeln("</td>")
+        document.writeln("</tr>")
+    }
+    document.writeln("</table>")
+</script>
+</body>
+</html>
