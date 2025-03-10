@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Rectangle {
+        length;
+        width;
+
+        constructor(length, width) {
+            this.length = length;
+            this.width = width;
+        }
+
+        calArea() {
+            return this.width * this.length;
+        }
+
+        calPerimeter() {
+            return (this.length + this.width)*2;
+        }
+    }
+
+    let rect = new Rectangle(8, 4);
+    alert(rect.calArea())
+    alert(rect.calPerimeter())
+    rect.width = 5;
+    rect.length = 10;
+    alert(rect.calArea())
+    alert(rect.calPerimeter())
+</script>
+</body>
+</html>
